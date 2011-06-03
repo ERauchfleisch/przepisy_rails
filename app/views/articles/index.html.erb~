@@ -1,0 +1,23 @@
+<h1>Menu</h1>
+
+<table id="menu">
+  <tr>
+    <th>Potrawa</th>
+    <th>Autor</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= link_to article.title, article %></td>
+    <td><%= article.author %></td>
+    <td><%= link_to 'Edycja', edit_article_path(article) %></td>
+    <td><%= link_to 'Usuń', article, :confirm => 'Czy na pewno chcesz usunąć przepis?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to 'Nowy przepis', new_article_path %>

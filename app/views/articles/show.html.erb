@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Potrawa:</b>
+  <%= @article.title %>
+</p>
+
+<p>
+  <b>Autor:</b>
+  <%= @article.author %>
+</p>
+
+<p>
+  <b>Przepis:</b>
+  <%= simple_format (@article.description) %>
+</p>
+
+
+<%= link_to 'Edycja', edit_article_path(@article) %> |
+<%= link_to 'Powrót', articles_path %>
